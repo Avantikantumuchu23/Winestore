@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Food</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="http://cs99.bradley.edu/~akantumuchu/Assignment2/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<link rel="icon" href="http://cs99.bradley.edu/~akantumuchu/Assignment2/images/logo.png">
+<style>
+body, html {
+    height: 100%;
+}
+.parallax {
+    /* The image used */
+    background-image: url("wine3.jpg");
+
+    /* Set a specific height */
+    height: 100%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* Modal Box
+----------------------------------------------------------------------------------------------------------------*/
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 10px; /* Location of the box */
+    left: 500px;
+    top: 140px;
+    width: 30%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 6px;
+    background-color: #e60000;
+    color: white;
+}
+
+.modal-body {
+	padding: 2px 16px; 
+	align:center;
+}
+</style>
+<script>
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<div class="wrapper row0">
+  <header id="header" class="clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <p style="font-size:18px;"><a href="index.html"><img src="http://cs99.bradley.edu/~akantumuchu/Assignment2/images/logo.png" style="width:75px;height:75px"></a><I><B>FOOD CLUB</B></I></p>
+	  </div>
+    <div class="fl_right">
+      <ul class="nospace inline">
+        <li style="padding-top:20px;"><a href="http://cs99.bradley.edu/~akantumuchu/Assignment2/registration.html" style="font-size:14px;">Register</a></li>
+        <li id="mylist" style="padding-top:20px;font-size:15px;"><a>Login</a></li>
+		</ul>
+    </div>
+	<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+<div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+	  <h3 align="center">LOGIN</h3>
+    </div>
+	<div class="modal-body">
+	<form name="mylogin" action="http://cs99.bradley.edu/~akantumuchu/Assignment2/cgi-bin/login.cgi" onsubmit="return login()" method="post" enctype="multipart/form-data">
+	<table width="200" border="0" align="center">
+	<tr>
+	<td style="padding-left:5px;"><label style="color:White;">Username</label></td>
+	<td><input name="username" type="text" size="10" style="background-color:white;padding-left:20px" placeholder="User Name" /></td>                      
+	</tr>
+	<tr>
+	<td style="padding-left:5px;"><label style="color:White;">Password</label></td>
+	<td><input name="password" type="password" size="10" style="background-color:white;padding-left:20px" placeholder="Password" /></td>
+	</tr>
+    </table>
+	<div style="padding-left:130px;">
+	<input name="" type="submit" value="Login" style="background-color: #66ccff;color: white;display: inline-block;border: none;">   
+	</form>
+</div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var list = document.getElementById("mylist");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+list.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+</script>
+</form>
+    <!-- ################################################################################################ -->
+  </header>
+</div>
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <div id="topbar" class="clear"> 
+    <!-- ################################################################################################ -->
+    <nav id="mainav" class="fl_left">
+      <ul class="clear">
+        <li><a href="http://cs99.bradley.edu/~akantumuchu/Assignment2/index.html">Home</a></li>
+        <li><a href="http://cs99.bradley.edu/~akantumuchu/Assignment2/aboutus.html">About Us</a></li>
+		<li><a class="drop" href="#">MENU</a>
+		<ul>
+		    <li><a href="http://cs99.bradley.edu/~akantumuchu/Assignment2/dining.html">DINING IN</a></li>
+            <li><a href="http://cs99.bradley.edu/~akantumuchu/Assignment2/catering.html">CATERING</a></li>
+			<li><a href="http://cs99.bradley.edu/~akantumuchu/Assignment2/carryout.html">CARRY OUT</a></li>
+        </ul>
+		</li>
+        <li><a class="drop" href="#">GAMES</a>
+		<ul>
+		    <li><a href="http://cs99.bradley.edu/~akantumuchu/Assignment2/Craps.html">CRAP GAME</a></li>
+            <li><a href="http://cs99.bradley.edu/~akantumuchu/Assignment2/drawing.html">DRAWING GAME</a></li>
+			<li><a href="http://cs99.bradley.edu/~akantumuchu/Assignment2/tictactoe.html">TIC TAC TOE</a></li>
+        </ul>
+		</li>
+		<li><a href="http://cs99.bradley.edu/~akantumuchu/Assignment2/table.html">Recipes</a></li>
+		<li><a href="http://cs99.bradley.edu/~akantumuchu/Assignment2/team.html">Team</a></li>
+		<li><a href="http://cs99.bradley.edu/~akantumuchu/Assignment2/contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+	<div id="time" style="margin-left:750px;color:#e60000">
+		</div>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<div class="parallax">
+<div class="tab" style="background:linear-gradient(to bottom, #cc0000 0%, #ff9966 100%);">
+  			<button class="tablinks" onclick="openCity(event, 'Search')" id="defaultOpen"><b>Search Wines</b></button>
+<script>
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+  			<button class="tablinks" onclick="openCity(event, 'create')"><b>Create New Wine</b></button>
+  			<button class="tablinks" onclick="openCity(event, 'Modify')"><b>Modify Existing Wine Info</b></button>
+            <button class="tablinks" onclick="openCity(event, 'Delete')"><b>Delete Existing Wine Info</b></button>
+		</div>        
+	<div id="Search" class="tabcontent" style="background-color:#330000; opacity:.8;">
+    <form id="togtab" name="searchform" action="display.php" target="iframe1" method="get" enctype="multipart/form-data">
+  		<table border="0" cellspacing="20" cellpadding="9" align="center" width="70%">
+				<tr>
+	<td ><font color="red">*</font><label for="Regionname" style="color:#ffffff"><b>Region Name: </b></label></td>
+    <td ><input type="text" name="regionName" placeholder="Select a region" list="regions" />
+		<datalist id="regions">
+           <option value="Upper Hunter Valley">Upper Hunter Valley</option> 
+            <option value="Coonawarra">Coonawarra</option>
+            <option value="Goulburn Valley">Goulburn Valley</option>
+            <option value="Lower Hunter Valley">Lower Hunter Valley</option>
+			<option value="Rutherglen">Rutherglen</option>
+			 <option value="Barossa Valley">Barossa Valley</option>
+            <option value="Riverland">Riverland</option>
+            <option value="Margaret River">Margaret River</option>
+			<option value="Swan Valley">Swan Valley</option>
+			 <option value="All">All</option>
+		</datalist></td></tr>
+
+                         <tr>
+						<td><font color="red">*</font><lable style="color:#ffffff"><b>Wine Type:</b></lable></td>
+						<td><input type="Radio" name="wineType" id="All" value="All" checked="checked">
+							<lable style="color:#FFFFFF">All</lable> &nbsp;
+						    <input type="Radio" name="wineType" id="Sparkling" value="Sparkling">
+							<lable style="color:#FFFFFF">Sparkling</lable> &nbsp;
+                             <input type="Radio" name="wineType" id="Fortified" value="Fortified">
+							<lable style="color:#FFFFFF">Fortified</lable> &nbsp;
+                            <input type="Radio" name="wineType" id="Sweet" value="Sweet">
+							<lable style="color:#FFFFFF">Sweet</lable> 
+                            <input type="Radio" name="wineType" id="White" value="White">
+							<lable style="color:#FFFFFF">White</lable> 
+                            <input type="Radio" name="wineType" id="Red" value="Red">
+							<lable style="color:#FFFFFF">Red</lable> 
+                        </td>    
+					</tr>
+                    <tr>
+                    	<td><font color="red">*</font><lable style="color:#ffffff"><b>Year:</b></lable></td>
+                         &nbsp;
+                         &nbsp;
+								<td><select name="year" id="year" style= "border: 1.0px solid #000" style="width: 30px; height:30px">
+								<option name="year" value=" " >Year</option>
+									<script language="javascript">
+										for(i=1970;i<=2000;i++)
+										document.write("<option>"+i+"</option>");
+									</script>
+                           		</select>
+                        <br></td>
+                   	</tr>
+                    <tr>
+                    <td><font color="red">*</font><lable style="color:#ffffff"><b>Wine Name:</b></lable></td>
+                        &nbsp;
+                        &nbsp;
+                    <td>
+                    <input type="text" name="wine_name" id="wine_name" size="10" style= "border: 1.0px solid #000" placeholder="Ex: Sorrenti" >				<br>
+                    </td> 
+                    </tr>
+					<tr>
+						<td><font color="red">*</font><lable style="color:#ffffff"><b>Price Range:</b></lable></td>
+                        &nbsp;
+                        &nbsp;
+						<td><input type="decimal" id="price1" name="price1" size="10" style= "border: 1.0px solid #000" placeholder="Ex: 10.09" > - <input type="decimal" id="price2" name="price2" size="10" style= "border: 1.0px solid #000" placeholder="Ex: 21.19" >
+						<br></td>
+					</tr>
+                    
+					<tr>
+						<td align="center" valign="top" colspan="2"><br>
+                        <input type="submit" name="operation" value="Search" style= "border: 1.0px solid #000">
+
+							<input type="reset" name="rreset" value="Reset" onclick="ClearFields();" style= "border: 1.0px solid #000">
+                        </td>
+					</tr>
+			</table>              
+
+</form>
+
+<iframe name="iframe1" id='iframe1' style="overflow: hidden; height: 100%; width:99%; position: absolute; alignment-adjust:central" frameborder="0" ></iframe>
+<script>
+							function ClearFields() {
+								var iframe = document.getElementById("iframe1");
+								var html = "";
+								iframe.contentWindow.document.open();
+								iframe.contentWindow.document.write(html);
+								iframe.contentWindow.document.close();
+								iframe.style.visibility="hidden";
+								}
+						    </script> 
+</div>
+
+    <div id="create" class="tabcontent" style="background-color:#330000; opacity:.8;">
+        <form name="createform" action="create.php" target="iframe2" method="get" enctype="multipart/form-data">
+    	<table border="0" cellspacing="7" cellpadding="9" align="center" width="70%">
+        <tr>
+        <td><font color="red">*</font><lable style="color:#ffffff"><b>Wine Name: </b></lable></td>
+        <td><input type="text" name="wine_name" id="wine_name" placeholder="Wine name" required style= "border: 1.0px solid #000"><br></td>
+               
+					 <tr>
+						<td><font color="red">*</font><lable style="color:#FFFFFF"><b>Wine Type:</b></lable></td>
+						<td><input type="Radio" name="r1" id="All" value="All" checked="checked">
+							<lable style="color:#FFFFFF">All</lable> &nbsp;
+						    <input type="Radio" name="r1" id="Sparkling" value="Sparkling">
+							<lable style="color:#FFFFFF">Sparkling</lable> &nbsp;
+                             <input type="Radio" name="r1" id="Fortified" value="Fortified">
+							<lable style="color:#FFFFFF">Fortified</lable> &nbsp;
+                            <input type="Radio" name="r1" id="Sweet" value="Sweet">
+							<lable style="color:#FFFFFF">Sweet</lable> 
+                            <input type="Radio" name="r1" id="White" value="White">
+							<lable style="color:#FFFFFF">White</lable> 
+                            <input type="Radio" name="r1" id="Red" value="Red">
+							<lable style="color:#FFFFFF">Red</lable> 
+                        </td>    
+					</tr>
+        <td><font color="red">*</font><lable style="color:#ffffff"><b>Year:</b></lable></td>
+                         &nbsp;
+                         &nbsp;
+						 <td><select name="year" id="year" style= "border: 1.0px solid #000" required>
+						 <option value=" ">Year</option>
+						 <script language="javascript">
+						 for(i=1970;i<=2000;i++)
+						 document.write("<option>"+i+"</option>");
+						 </script>
+                         </select>
+        <br></td>
+        </tr>
+        <tr>
+        <td><font color="red">*</font><lable style="color:#FFFFFF"><b>Price:</b></lable></td>
+						<td><input type="text" name="price" id="price"  required style= "border: 1.0px solid #000" placeholder="Ex: 10.09" onblur="cvalidate3()"><span id="cprice"style="color:#FFF" ></span><br></td></tr>
+        <tr>
+        <td><font color="red">*</font><lable style="color:#FFFFFF"><b>Winery Name:</b></lable></td>
+	 	<td><input type="text" name="winery_name" id="winery_name" placeholder="Winery name" required style= "border: 1.0px solid #000" onblur="cvalidate2()"><span id="cwineryname"style="color:#FFF" ></span><br></td><tr>          
+        <tr>
+	<td ><font color="red">*</font><label for="Regionname" style="color:#FFFFFF"><b>Region Name: </b></label></td>
+    <td ><input type="text" name="regionName" placeholder="Select a region" list="regions" required />
+		<datalist id="regions">
+           <option value="Upper Hunter Valley">Upper Hunter Valley</option> 
+            <option value="Coonawarra">Coonawarra</option>
+            <option value="Goulburn Valley">Goulburn Valley</option>
+            <option value="Lower Hunter Valley">Lower Hunter Valley</option>
+			<option value="Rutherglen">Rutherglen</option>
+			 <option value="Barossa Valley">Barossa Valley</option>
+            <option value="Riverland">Riverland</option>
+            <option value="Margaret River">Margaret River</option>
+			<option value="Swan Valley">Swan Valley</option>
+			 <option value="All">All</option>
+		</datalist></td></tr>
+          <td align="center" valign="top" colspan="2"><br>
+                        				<input type="submit" name="insert" value="Insert wine data" style= "border: 1.0px solid #000">
+							<input type="reset" name="rreset" value="Reset" onclick="ClearFields();" style= "border: 1.0px solid #000">
+                        			</td>
+        </table>
+</form>
+
+<iframe name="iframe2" id='iframe2' style="overflow: hidden; height: 100%; width:99%; position: absolute; alignment-adjust:central" frameborder="0" ></iframe>        
+ 
+  <script>
+							function ClearFields() {
+								var iframe = document.getElementById("iframe2");
+								var html = "";
+								iframe.contentWindow.document.open();
+								iframe.contentWindow.document.write(html);
+								iframe.contentWindow.document.close();
+								iframe.style.visibility="hidden";
+								}
+						    </script>      
+    </div>
+
+    <div id="Modify" class="tabcontent" style="background-color:#330000; opacity:.8;">
+    <form name="modifyform" action="modify.php" target="iframe3" method="get" enctype="multipart/form-data">
+  	<table border="0" cellspacing="7" cellpadding="9" align="center" width="50%">
+    	<tr>
+        <td><font color="red">*</font><lable style="color:#FFFFFF"><b>Wine ID:</b></lable></td>
+	 	<td><input type="text" name="wine_ID" id="wine_ID" placeholder="Wine ID" required="required" style= "border: 1.0px solid #000" onblur="mvalidate1()"><span id="mwine"style="color:#FFF" ></span><br></td></tr>   
+        <tr>
+        <td><font color="red">*</font><lable style="color:#FFFFFF"><b>Winery ID:</b></lable></td>
+	 	<td><input type="text" name="winery_ID" id="winery_ID" placeholder="Winery ID" required="required" style= "border: 1.0px solid #000" onblur="mvalidate2()"><span id="mwinery" style="color:#FFF"></span><br></td></tr>          
+		<tr>       
+		<tr>
+        <tr>
+        <td><font color="red">*</font><lable style="color:#FFFFFF"><b>Enter Wine Name: </b></lable></td>
+        <td><input type="text" name="wine_name" id="wine_name" placeholder="Wine name" required="required" style= "border: 1.0px solid #000" onblur="mvalidate3()"><span id="mwinename" style="color:#FFF"></span><br></td>
+          </tr>     
+		<tr>
+        <td><font color="red">*</font><lable style="color:#FFFFFF"><b>Winery Name:</b></lable></td>
+	 	<td><input type="text" name="winery_name" id="winery_name" placeholder="Winery name" required="required" style= "border: 1.0px solid #000" onblur="mvalidate4()"><span id="mwineryname" style="color:#FFF"></span><br></td></tr>          
+      		
+        <tr>
+        <td><font color="red">*</font><lable style="color:#FFFFFF"><b>Wine Price:</b></lable><span id="mprice"></span></td>
+						<td><input type="text" name="price" id="price" required="required" style= "border: 1.0px solid #000" placeholder="Ex: 10.09" onblur="mvalidate5()"><span id="mprice" style="color:#FFF"></span><br></td></tr>
+         
+        <td align="center" valign="top" colspan="2"><br>
+        <input type="submit" name="insert" value="Modify Wine Data" style= "border: 1.0px solid #000">
+	    <input type="reset" name="rreset" value="Reset" onclick="ClearFields();" style= "border: 1.0px solid #000">
+        </td>
+        </tr>
+        </table>
+        </form>
+
+<iframe name="iframe3" id='iframe3' style="overflow: hidden; height: 100%; width:99%; position: absolute; alignment-adjust:central" frameborder="0" ></iframe>       
+<script>
+							function ClearFields() {
+								var iframe = document.getElementById("iframe3");
+								var html = "";
+								iframe.contentWindow.document.open();
+								iframe.contentWindow.document.write(html);
+								iframe.contentWindow.document.close();
+								iframe.style.visibility="hidden";
+								}
+						    </script> 
+	</div>  
+    <div id="Delete" class="tabcontent" style="background-color:#330000; opacity:.8;">
+    <form name="deleteform" action="delete.php" target="iframe4" method="get" enctype="multipart/form-data">
+  	<table border="0" cellspacing="7" cellpadding="9" align="center" width="50%">
+    <tr>
+        <td><font color="red">*</font><lable style="color:#FFFFFF"><b>Wine ID:</b></lable></td>
+	 	<td><input type="text" name="wine_ID" id="wine_ID" placeholder="Wine ID" required="required" style= "border: 1.0px solid #000" onblur="dvalidate1()"><span id="dwine" style="color:#FFF"></span><br></td></tr>
+        <tr>
+        <td><font color="red">*</font><lable style="color:#FFFFFF"><b>Winery ID:</b></lable></td>
+	 	<td><input type="text" name="winery_ID" id="winery_ID" placeholder="Winery ID" required="required" style= "border: 1.0px solid #000" onblur="dvalidate2()"><span id="dwinery" style="color:#FFF"></span><br></td></tr>   
+    	<tr><td align="center" valign="top" colspan="2"><br>
+          	<input type="submit" name="delete" value="Delete" style= "border: 1.0px solid #000">
+			<input type="reset" name="rreset" value="Reset" onclick="ClearFields();" style= "border: 1.0px solid #000">
+            </td>
+		</tr>
+    </table>	
+         </form>
+
+<iframe name="iframe4" id='iframe4' style="overflow: hidden; height: 100%; width:99%; position: absolute; alignment-adjust:central" frameborder="0" ></iframe> 
+<script>
+							function ClearFields() {
+								var iframe = document.getElementById("iframe4");
+								var html = "";
+								iframe.contentWindow.document.open();
+								iframe.contentWindow.document.write(html);
+								iframe.contentWindow.document.close();
+								iframe.style.visibility="hidden";
+								}
+						    </script> 
+	</div>  
+    
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="index.js"></script>
+</div>
+</div>
+</div>
+<div class="parallax"></div>
+</body>
+</html>
